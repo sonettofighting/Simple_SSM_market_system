@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="chaoshi.war">
+    <root id="archive" name="fjnu_good_student.war">
       <element id="artifact" artifact-name="fjnu_good_student:war exploded" />
     </root>
   </artifact>

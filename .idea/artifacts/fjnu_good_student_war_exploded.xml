@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="fjnu_good_student:war exploded">
-    <output-path>$PROJECT_DIR$/target/chaoshi</output-path>
+    <output-path>$PROJECT_DIR$/target/fjnu_good_student</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
@@ -56,7 +56,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/chaoshi/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/fjnu_good_student/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="fjnu_good_student/web/Web" />
     </root>
