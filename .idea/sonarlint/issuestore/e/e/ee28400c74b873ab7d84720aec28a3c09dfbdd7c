@@ -1,0 +1,35 @@
+
+@
+java:S5411A"*Use the primitive boolean expression here.(äÕ¤Ì
+Y
+java:S3752I">Add a "method" parameter to this "@RequestMapping" annotation.(·°»ëøÿÿÿÿ
+e
+java:S3252n"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(ğï«
+T
+java:S3752O">Add a "method" parameter to this "@RequestMapping" annotation.(·»¶‰
+`
+java:S11925"JDefine a constant instead of duplicating this literal "CusRetire" 4 times.(æš§ğ
+f
+java:S1192D"PDefine a constant instead of duplicating this literal "redirect:getall" 3 times.(ãÆİí
+Y
+java:S3752U">Add a "method" parameter to this "@RequestMapping" annotation.(À‡¦øÿÿÿÿ
+f	java:S117W"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½±ÈÁ
+e
+java:S3252+"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(Ÿì·Ñ
+T
+java:S3752i">Add a "method" parameter to this "@RequestMapping" annotation.(ú¬óÏ
+T
+java:S3752:">Add a "method" parameter to this "@RequestMapping" annotation.(ÇìêÂ
+N
+java:S1854x"8Remove this useless assignment to local variable "sale".(ØË”¥
+T
+java:S3752'">Add a "method" parameter to this "@RequestMapping" annotation.(±½ù•
+f	java:S117@"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñÊˆ†
+k	java:S117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ü¦áŒûÿÿÿÿ
+k	java:S117;"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾’âÜúÿÿÿÿ
+Y
+java:S37523">Add a "method" parameter to this "@RequestMapping" annotation.(—øÎùÿÿÿÿ
+T
+java:S3752u">Add a "method" parameter to this "@RequestMapping" annotation.(ƒÑ¬ƒ
+T
+java:S3752?">Add a "method" parameter to this "@RequestMapping" annotation.(ƒØœ

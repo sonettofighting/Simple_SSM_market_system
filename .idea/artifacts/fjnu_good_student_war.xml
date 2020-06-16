@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="fjnu_good_student:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>fjnu_good_student</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="chaoshi.war">
+      <element id="artifact" artifact-name="fjnu_good_student:war exploded" />
+    </root>
+  </artifact>
+</component>

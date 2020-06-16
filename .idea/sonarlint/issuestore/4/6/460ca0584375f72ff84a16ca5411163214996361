@@ -1,0 +1,36 @@
+
+T
+java:S3752c">Add a "method" parameter to this "@RequestMapping" annotation.(ŒÔ—Ú
+h	java:S100P"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÍþìúÿÿÿÿ
+e
+java:S3252S"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(Ÿì·Ñ
+f
+java:S11927"PDefine a constant instead of duplicating this literal "redirect:getall" 3 times.(ãÆÝí
+T
+java:S1854"8Remove this useless assignment to local variable "kcxx".( ®¼–ÿÿÿÿÿ
+T
+java:S3752C">Add a "method" parameter to this "@RequestMapping" annotation.(Ä·è‡
+T
+java:S3752O">Add a "method" parameter to this "@RequestMapping" annotation.(š‹Ûè
+Y
+java:S3752\">Add a "method" parameter to this "@RequestMapping" annotation.(”é†ÿüÿÿÿÿ
+e
+java:S3252w"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(ðï«
+Y
+java:S3752)">Add a "method" parameter to this "@RequestMapping" annotation.(¦ÌÍ›þÿÿÿÿ
+Y
+java:S3752<">Add a "method" parameter to this "@RequestMapping" annotation.(·°»ëøÿÿÿÿ
+t
+java:S2293y"YReplace the type specification in this constructor call with the diamond operator ("<>").(‰…‰€üÿÿÿÿ
+E
+java:S5411E"*Use the primitive boolean expression here.(äáçâüÿÿÿÿ
+Y
+java:S37520">Add a "method" parameter to this "@RequestMapping" annotation.(À‡¦øÿÿÿÿ
+T
+java:S3752s">Add a "method" parameter to this "@RequestMapping" annotation.(ú¬óÏ
+T
+java:S3752~">Add a "method" parameter to this "@RequestMapping" annotation.(„Ñ ß
+t
+java:S2293U"YReplace the type specification in this constructor call with the diamond operator ("<>").(¤ë÷‚úÿÿÿÿ
+T
+java:S3752"">Add a "method" parameter to this "@RequestMapping" annotation.(·»¶‰
