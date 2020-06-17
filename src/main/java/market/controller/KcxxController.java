@@ -87,6 +87,18 @@ public class KcxxController {
         return "getall_kcxx";
 
     }
+
+    @RequestMapping("getsoldout")
+    public String getsoldout(Model model,
+                             @RequestParam(defaultValue = "1", value = "pn") Integer pn)
+    {
+        PageHelper.startPage(pn, 100);
+        List<Kcxx> ckin = kcxxServiceImp.getsoldout();
+        PageInfo<Kcxx> pageInfo = new PageInfo<Kcxx>(ckin);
+        model.addAttribute("pageInfo", pageInfo);
+        return "getkcxxsoldout";
+
+    }
 //  查询单个
 
     @RequestMapping("/getbyid")

@@ -69,5 +69,10 @@ public class KcxxServiceImp implements IKcxxService {
         return kcxxMapper.getbyparams(proid, pname);
     }
 
+    @Override
+    public List<Kcxx> getsoldout() {
+        return kcxxMapper.getsoldout();
+    }
+
 
 }

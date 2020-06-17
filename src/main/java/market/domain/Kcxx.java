@@ -13,6 +13,6 @@ public class Kcxx {
 
     private String marks;
     
-    static Product product;
+    Product product;
     static Date now = new Date();
 }

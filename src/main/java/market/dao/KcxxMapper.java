@@ -22,4 +22,6 @@ public interface KcxxMapper {
     List<Kcxx> kcxxWithPronum();
     List<Kcxx> kcxxWithProdata();
     List<Kcxx> getbyparams(@Param("proid") String proid,@Param("pname")String pname);
+    List<Kcxx> getsoldout();
+
 }

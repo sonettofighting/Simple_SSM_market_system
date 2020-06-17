@@ -22,6 +22,7 @@
 								    <input type="text" class="form-control" id="cusname" name="cusname">
 								  </div>
 								  <button class="btn btn-primary" type="submit">查询</button>
+
 								  <a href="${pageContext.request.contextPath }/staff/flatform/custom/toadd" class="btn btn-primary " role="button">新增</a>
 								  </span>
 								  

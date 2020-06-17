@@ -6,14 +6,14 @@
 	<div class="col-md-12 col-sm-12 col-xs-12">
 	                <div class="x_panel">
 	                  <div class="x_title row">
-	                    <h2>库存信息查询结果列表 </h2>
+	                    <h2>库存信息查询结果</h2>
 	                    <div class="clearfix"></div>
 	                  </div>
 					<div class="row">
 	                  <div class="x_content">
 	                    <table id="datatable" class="table  table-bordered table-hover info">
 					    	<tr>
-					        	 <th>商品id</th>
+					        	 <th>商品ID</th>
 					        	 <th>名称</th>
 					        	 <th>数量</th>
 					        	 <th>备注</th>

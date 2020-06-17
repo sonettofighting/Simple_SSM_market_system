@@ -23,4 +23,5 @@ public interface IKcxxService {
     
     List<Kcxx> getbyparams(String proid,String pname);
 
+    List<Kcxx> getsoldout();
 }
