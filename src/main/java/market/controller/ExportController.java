@@ -126,4 +126,15 @@ public class ExportController {
         return purchaseServiceImp.getbyid(inid);
     }
 
+    //	按时间区间获取所有进货信息
+    @RequestMapping("getinrange")
+    public String getinrange(Model model, @RequestParam(value = "param1", required = false)String param1,
+                             @RequestParam(value = "param2", required = false)String param2,
+                             @RequestParam(defaultValue = "1", value = "pn") Integer pn) {
+        PageHelper.startPage(pn, 100);
+        List<Export> ckin = exportServiceImp.getinrange(param1, param2);
+        PageInfo<Export> pageInfo = new PageInfo<Export>(ckin);
+        model.addAttribute("pageInfo", pageInfo);
+        return "getexportbyparams";
+    }
 }

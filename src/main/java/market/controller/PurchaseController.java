@@ -109,8 +109,17 @@ public class PurchaseController {
         PageInfo<Purchase> pageInfo = new PageInfo<Purchase>(purchase);
         model.addAttribute("pageInfo", pageInfo);
         return "getpurchasebyparams";
-
     }
-
+    //	按时间区间获取所有进货信息
+    @RequestMapping("getinrange")
+    public String getinrange(Model model, @RequestParam(value = "param1", required = false)String param1,
+                             @RequestParam(value = "param2", required = false)String param2,
+                             @RequestParam(defaultValue = "1", value = "pn") Integer pn) {
+        PageHelper.startPage(pn, 100);
+        List<Purchase> purchase = purchaseServiceImp.getinrange(param1, param2);
+        PageInfo<Purchase> pageInfo = new PageInfo<Purchase>(purchase);
+        model.addAttribute("pageInfo", pageInfo);
+        return "getpurchasebyparams";
+    }
 }
 

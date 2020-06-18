@@ -40,6 +40,14 @@
 
 								  </span>
                 </form>
+
+                <form class="form-inline" action="getinrange" method="post">
+                    <label>时间区间查询</label>
+                    <input class="form-control" id="param1" name="param1" type="date">~
+                    <input class="form-control" id="param2" name="param2" type="date">
+                    <button type="submit" class=" btn btn-primary">查询</button>
+                </form>
+
             </div>
             <div class="row">
                 <div class="x_content">

@@ -186,4 +186,11 @@
 		</if>
 		</where>	
   </select>
+
+  <select id="getinrange" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select * from export
+    <where>
+      indate between #{param1,jdbcType=DATE} and #{param2, jdbcType=DATE}
+    </where>
+  </select>
 </mapper>

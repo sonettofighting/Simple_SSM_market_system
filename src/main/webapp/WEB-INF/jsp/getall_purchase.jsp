@@ -25,8 +25,8 @@
 								    <label>商品名称</label>
 								    <input type="text" class="form-control" id="pname" name="pname">
 								  </div>
-			                       
-								  <button class="btn btn-primary" type="submit">查询</button>
+
+
 								  </span>
                     <span class="row">
 								 <div class="form-group">
@@ -35,10 +35,18 @@
 								  </div>
 								  <div class="form-group">
 								    <label>进货日期</label>
-								    <input type="text" class="form-control" id="indate" name="indate" type="date">
+								    <input class="form-control" id="indate" name="indate" type="date">
 								  </div>
 <%-- 								  <a href="${pageContext.request.contextPath }/staff/flatform/purchase/toadd" class="btn btn-primary " role="button">新增</a>
- --%>								  </span>
+ --%>
+                    <button class="btn btn-primary" type="submit">查询</button>  </span>
+                </form>
+
+                <form class="form-inline" action="getinrange" method="post">
+                    <label>时间区间查询</label>
+                    <input class="form-control" id="param1" name="param1" type="date">~
+                    <input class="form-control" id="param2" name="param2" type="date">
+                    <button type="submit" class=" btn btn-primary">查询</button>
                 </form>
             </div>
             <div class="row">

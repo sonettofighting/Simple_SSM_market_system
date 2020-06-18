@@ -19,4 +19,5 @@ public interface IPurchaseService {
 
     List<Purchase> getbyparams(String proid, String inid, String pname, String indate);
 
+    List<Purchase> getinrange(String param1, String param2);
 }

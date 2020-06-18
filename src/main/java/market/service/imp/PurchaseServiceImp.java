@@ -43,5 +43,10 @@ public class PurchaseServiceImp implements IPurchaseService {
         return purchaseMapper.getbyparams(proid, inid, pname, indate);
     }
 
+    @Override
+    public List<Purchase> getinrange(String param1, String param2) {
+        return purchaseMapper.getinrange(param1, param2);
+    }
+
 
 }

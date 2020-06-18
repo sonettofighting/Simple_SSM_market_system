@@ -21,5 +21,5 @@ public interface PurchaseMapper {
 
     List<Purchase> getbyparams(@Param("proid") String proid, @Param("inid") String inid, @Param("pname") String pname, @Param("indate") String indate);
 
-
+    List<Purchase> getinrange(@Param("indate")String param1, @Param("indate")String param2);
 }

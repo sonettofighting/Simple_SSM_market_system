@@ -2,6 +2,7 @@ package market.service.imp;
 
 import market.dao.ExportMapper;
 import market.domain.Export;
+import market.domain.Purchase;
 import market.service.IExportService;
 import org.springframework.stereotype.Service;
 
@@ -44,4 +45,7 @@ public class ExportServiceImp implements IExportService {
         return exportMapper.getbyparams(proid, inid, pname, retdate);
     }
 
+    public List<Export> getinrange(String param1, String param2){
+        return exportMapper.getinrange(param1, param2);
+    }
 }

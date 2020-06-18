@@ -140,9 +140,7 @@ public class KcxxController {
     @RequestMapping("getkcxx")
     @ResponseBody
     public Kcxx getkcxx(String proid) {
-
         return kcxxServiceImp.getbyid(proid);
-
     }
 
 }
