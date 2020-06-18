@@ -19,7 +19,7 @@
     }
 </script>
 
-<body class="nav-md" background="https://img1.doubanio.com/view/group_topic/l/public/p168111987.webp">
+<body class="nav-md" background="http://img.netbian.com/file/2020/0524/0b4fcd057e4610376f06238ab915c6b1.jpg">
 <%--<body class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">--%>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarCollapse">

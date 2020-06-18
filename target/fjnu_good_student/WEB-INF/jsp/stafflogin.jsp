@@ -24,7 +24,7 @@
 
 </head>
 
-<body class="text-center" background="https://img1.doubanio.com/view/group_topic/l/public/p168111987.webp">
+<body class="text-center" background="http://img.netbian.com/file/2020/0618/ed7645760e586202efee77f2f2da4206.jpg">
 
 <div class="container">
     <div class="row myCenter">
