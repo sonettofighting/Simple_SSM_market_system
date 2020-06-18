@@ -63,13 +63,13 @@
                        type="text">
             </div>
         </div>
-        <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-5">计件方式<span>*</span>
-            </label>
-            <div class="col-md-6 col-sm-6 col-xs-5">
-                <input id="unit" name="unit" class="form-control col-md-7 col-xs-5" value="${product.unit}" type="text">
-            </div>
-        </div>
+<%--        <div class="item form-group">--%>
+<%--            <label class="control-label col-md-3 col-sm-3 col-xs-5">计件方式<span>*</span>--%>
+<%--            </label>--%>
+<%--            <div class="col-md-6 col-sm-6 col-xs-5">--%>
+<%--                <input id="unit" name="unit" class="form-control col-md-7 col-xs-5" value="${product.unit}" type="text">--%>
+<%--            </div>--%>
+<%--        </div>--%>
         <div class="item form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-5">备注<span>*</span>
             </label>

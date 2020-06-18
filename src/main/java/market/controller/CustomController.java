@@ -48,7 +48,7 @@ public class CustomController {
         } else {
             customServiceImp.update(custom);
         }
-        return "getall_type";
+        return "getall_cus";
 
     }
 //    删除
@@ -56,18 +56,16 @@ public class CustomController {
     @RequestMapping("/delete")
     public String delete(String cusid) {
         customServiceImp.delete(cusid);
-        return "getall_type";
+        return "getall_cus";
     }
 //    修改
 
     @RequestMapping("/update")
     public String update(Custom custom, Model model) {
-        if (customServiceImp.update(custom)) {
+            customServiceImp.update(custom);
             custom = customServiceImp.getByid(custom.getCusid());
             model.addAttribute("custom", custom);
-            return "getall_type";
-        }
-        return null;
+            return "getall_cus";
     }
 
 //    查询所有
@@ -89,7 +87,7 @@ public class CustomController {
     public String getbyid(String cusid, HttpServletRequest request, Model model) {
         request.setAttribute("custom", customServiceImp.getByid(cusid));
         model.addAttribute("custom", customServiceImp.getByid(cusid));
-        return "getall_type";
+        return "getall_cus";
 
     }
 

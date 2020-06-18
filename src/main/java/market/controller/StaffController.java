@@ -103,7 +103,7 @@ public class StaffController {
         } else {
             staffServiceImp.update(staff);
         }
-        return "getall_type";
+        return "getall_cus";
 
     }
 //    删除
@@ -111,7 +111,7 @@ public class StaffController {
     @RequestMapping("/delete")
     public String delete(String staffid) {
         staffServiceImp.delete(staffid);
-        return "getall_type";
+        return "getall_cus";
     }
 //  查询所有
 

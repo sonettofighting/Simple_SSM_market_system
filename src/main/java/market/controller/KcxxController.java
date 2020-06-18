@@ -52,7 +52,7 @@ public class KcxxController {
         } else {
             kcxxServiceImp.update(kcxx);
         }
-        return "getall_type";
+        return "getall_kcxx";
 
     }
 //    删除
@@ -60,7 +60,7 @@ public class KcxxController {
     @RequestMapping("/delete")
     public String delete(String proid) {
         kcxxServiceImp.delete(proid);
-        return "getall_type";
+        return "getall_kcxx";
     }
 //    修改
 
@@ -69,7 +69,7 @@ public class KcxxController {
         if (kcxxServiceImp.update(kcxx)) {
             kcxx = kcxxServiceImp.getbyid(kcxx.getProid());
             model.addAttribute("kcxx", kcxx);
-            return "getall_type";
+            return "getall_kcxx";
         }
         return null;
     }
@@ -104,7 +104,7 @@ public class KcxxController {
     public String getbyid(String proid, HttpServletRequest request, Model model) {
         request.setAttribute("kcxx", kcxxServiceImp.getbyid(proid));
         model.addAttribute("kcxx", kcxxServiceImp.getbyid(proid));
-        return "getall_type";
+        return "getall_kcxx";
 
     }
 

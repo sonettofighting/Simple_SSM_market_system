@@ -20,4 +20,6 @@ public interface PurchaseMapper {
     boolean updateByPrimaryKey(Purchase record);
 
     List<Purchase> getbyparams(@Param("proid") String proid, @Param("inid") String inid, @Param("pname") String pname, @Param("indate") String indate);
+
+
 }

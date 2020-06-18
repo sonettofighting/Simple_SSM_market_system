@@ -30,7 +30,8 @@
             &raquo;</a>
         <a class="btn btn-info btn-lg" onclick="update(${staffSession.staffid})">修改资料
             &raquo;</a>
-
+       <a class="btn btn-info btn-lg"  href="../../comment.jsp">联系我们
+           &raquo;</a>
     </div>
     <div class="container">
 

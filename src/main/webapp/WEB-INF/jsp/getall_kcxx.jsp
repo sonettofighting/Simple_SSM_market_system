@@ -6,33 +6,25 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title row">
-                <h2 class="fa-font">库存管理</h2>
-                <p>以下是当前学霸超市的库存情况，您可以根据当前的情况进行查看、删除、修改等操作。</p>
+                <div class="row">
                 <form action="getsoldout" method="post">
-                    <div class="btn-group">
-
-                        <button class="btn btn-danger" type="submit">查看缺货</button>
-                        <a href="${pageContext.request.contextPath}/staff/flatform/main" class="btn btn-info"
+                    <h2 class="fa-font">库存管理</h2>
+                    <p>以下是当前学霸超市的库存情况，您可以根据当前的情况进行查看、删除、修改等操作。</p>
+                    <hr>
+                    <div>
+                        <span>
+               <p>       <a href="${pageContext.request.contextPath}/staff/flatform/main" class="btn btn-info"
                            role="button">返回主页</a>
-
+                        <button class="btn btn-danger" type="submit">查看缺货</button>
+</p>
+</span>
                     </div>
                 </form>
-
+                </div>
             </div>
-
-            <%--			<form class="navbar-form navbar-left" role="search">--%>
-            <%--				<div class="form-group">--%>
-            <%--					<input type="text" class="form-control" placeholder="Search">--%>
-            <%--				</div>--%>
-            <%--				<button type="submit" class="btn btn-default">Submit</button>--%>
-            <%--			</form>--%>
-            <!-- 按钮 -->
-
             <div class="row">
                 <form class="form-inline" action="getbyparams" method="post">
                     <div class="form-group">
-                        <%--                        <input type="text" class="form-control" id="pname" name="pname">--%>
-
                         <div class="input-group">
                   <span class="input-group-addon">
    <label>商品名称</label>
@@ -41,12 +33,14 @@
 
                             <input type="text" class="form-control" id="pname" name="pname" aria-label="...">
                         </div>
+
+
                     </div>
                     <div class="form-group">
 
                         <div class="input-group">
                   <span class="input-group-addon">
-                        <label>商品ID</label>
+                        <label>商品编号</label>
                     <input type="checkbox" aria-label="商品ID">
                   </span>
                             <input type="text" class="form-control" id="proid" name="proid" aria-label="...">
@@ -62,7 +56,7 @@
                 <div class="x_content">
                     <table id="datatable" class="table table-bordered table-hover info">
                         <tr>
-                            <th>商品ID</th>
+                            <th>商品编号</th>
                             <th>商品名称</th>
                             <th>数量</th>
                             <th>备注</th>

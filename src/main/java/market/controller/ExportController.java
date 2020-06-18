@@ -67,7 +67,7 @@ public class ExportController {
         if (exportServiceImp.update(export)) {
             export = exportServiceImp.getbyid(export.getInid());
             model.addAttribute("export", export);
-            return "getall_type";
+            return "getall_export";
         }
         return null;
 
@@ -76,7 +76,7 @@ public class ExportController {
     @RequestMapping("/delete")
     public String deletete(String inid) {
         exportServiceImp.delete(inid);
-        return "getall_type";
+        return "getall_export";
     }
 
     //  跳转到增加页面
@@ -94,7 +94,7 @@ public class ExportController {
         } else {
             exportServiceImp.update(export);
         }
-        return "getall_type";
+        return "getall_export";
 
     }
 

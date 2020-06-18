@@ -11,20 +11,22 @@
             </div>
 
             <div class="row">
+                <a href="${pageContext.request.contextPath}/staff/flatform/main" class="btn btn-info"
+                   role="button">返回主页</a>
+                <a href="${pageContext.request.contextPath }/staff/flatform/type/insert"
+                   class="btn btn-primary " role="button">新增单位</a>
                 <form class="form-inline" action="getbyparams" method="post">
 			                      <span class="row">
 			                       <div class="form-group">
-								    <label>单位id:</label>
+								    <label>单位编号</label>
 								    <input type="text" class="form-control" id="protypeid" name="protypeid">
 								  </div>
 								  <div class="form-group">
-								    <label>单位名称:</label>
+								    <label>单位名称</label>
 								    <input type="text" class="form-control" id="typename" name="typename">
 								  </div>
 								  <button class="btn btn-primary" type="submit">查询</button>
 								  </span>
-                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">新增
-                    </button>
                 </form>
 
             </div>
@@ -95,7 +97,7 @@
                 <!-- 显示分页信息 -->
                 <div class="row">
                     <!--分页文字信息  -->
-                    <div class="col-md-6">当前 ${pageInfo.pageNum }页,总${pageInfo.pages }
+                    <div class="col-md-4">当前 ${pageInfo.pageNum }页,总${pageInfo.pages }
                         页,总 ${pageInfo.total } 条记录
                     </div>
                     <!-- 分页条信息 -->

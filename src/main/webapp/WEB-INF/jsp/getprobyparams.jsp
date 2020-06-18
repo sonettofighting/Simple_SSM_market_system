@@ -25,7 +25,7 @@
                             <th>生产日期</th>
                             <th>过期时间</th>
                             <th>商品类型</th>
-                            <th>计件方式</th>
+<%--                            <th>计件方式</th>--%>
                             <th>备注</th>
                             <th>操作</th>
                         </tr>
@@ -38,7 +38,7 @@
                                 <th><fmt:formatDate pattern="yyyy-MM-dd" value="${product.prodate}"/></th>
                                 <th><fmt:formatDate pattern="yyyy-MM-dd" value="${product.reledate}"/></th>
                                 <th>${product.protype}</th>
-                                <th>${product.unit}</th>
+<%--                                <th>${product.unit}</th>--%>
                                 <th>${product.marks}</th>
                                 <th>
                                     <div class="btn-group">

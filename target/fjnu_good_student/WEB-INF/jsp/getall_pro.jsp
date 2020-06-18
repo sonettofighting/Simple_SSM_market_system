@@ -6,45 +6,64 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title row">
-                <h2>商品信息列表 </h2>
+                <h2>商品信息列表</h2>
                 <div class="clearfix"></div>
             </div>
             <!-- 按钮 -->
             <div class="row">
+                <a href="${pageContext.request.contextPath}/staff/flatform/main" class="btn btn-info"
+                   role="button">返回主页</a>
+                <a href="${pageContext.request.contextPath}/staff/flatform/product/toaddpro"
+                   class="btn btn-primary " role="button">新增</a>
                 <form class="form-inline" action="getprobyparams" method="post">
-			                      <span class="row">
-			                      <div class="form-group">
-								    <label>商品类型:</label>
+			  <span class="row">
+			  <div class="form-group">
+                 <div class="input-group">
+                  <span class="input-group-addon">
+								    <label>商品类型</label>
+                         <input type="checkbox" aria-label="商品名称">
+                  </span>
 								    <input type="text" class="form-control" id="protype" name="protype">
-								  </div>
-			                       <div class="form-group">
-								    <label>商品id:</label>
+
+                 </div>
+                                  </div>
+			  <div class="form-group">
+                                       <div class="input-group">
+                  <span class="input-group-addon">
+								    <label>商品编号</label>
+                             <input type="checkbox" aria-label="商品名称">
+                  </span>
 								    <input type="text" class="form-control" id="proid" name="proid">
 								  </div>
-								  <button class="btn btn-primary" type="submit">查询</button>
-								  </span>
-                    <span class="row">
-								  <div class="form-group">
-								    <label>商品名称:</label>
-								    <input type="text" class="form-control" id="pname" name="pname">
+                                       </div>
+
+              <div class="form-group">
+              <div class="input-group">
+                  <span class="input-group-addon">
+								    <label>商品名称</label>
+                      <input type="checkbox" aria-label="商品名称">	  </span>
+								  <input type="text" class="form-control" id="pname"
+                                                                      name="pname">
+
 								  </div>
-								  <a href="${pageContext.request.contextPath}/staff/flatform/product/toaddpro"
-                                     class="btn btn-primary " role="button">新增</a>
-								  </span>
+              </div>
+                  <button class="btn btn-primary" type="submit">查询</button>
+              </span>
                 </form>
+
             </div>
             <div class="row">
                 <div class="x_content">
                     <table id="datatable" class="table table-bordered table-hover info">
                         <tr>
-                            <th>商品id</th>
+                            <th>商品编号</th>
                             <th>名称</th>
                             <th>售价</th>
                             <th>进价</th>
                             <th>生产日期</th>
                             <th>过期时间</th>
                             <th>商品类型</th>
-                            <th>计件方式</th>
+                            <%--                            <th>计件方式</th>--%>
                             <th>备注</th>
                             <th>操作</th>
                         </tr>
@@ -57,7 +76,7 @@
                                 <th><fmt:formatDate pattern="yyyy-MM-dd" value="${product.prodate}"/></th>
                                 <th><fmt:formatDate pattern="yyyy-MM-dd" value="${product.reledate}"/></th>
                                 <th>${product.protype}</th>
-                                <th>${product.unit}</th>
+                                    <%--                                <th>${product.unit}</th>--%>
                                 <th>${product.marks}</th>
                                 <th>
                                     <div class="btn-group">
@@ -85,7 +104,7 @@
             <!-- 显示分页信息 -->
             <div class="row">
                 <!--分页文字信息  -->
-                <div class="col-md-6">当前 ${pageInfo.pageNum }页,总${pageInfo.pages }
+                <div class="col-md-4">当前 ${pageInfo.pageNum }页,总${pageInfo.pages }
                     页,总 ${pageInfo.total } 条记录
                 </div>
                 <!-- 分页条信息 -->

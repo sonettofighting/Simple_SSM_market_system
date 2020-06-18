@@ -35,7 +35,6 @@
             <li><a href="${pageContext.request.contextPath}/staff/flatform/type/getall">商品单位</a></li>
 
             <li><a href="${pageContext.request.contextPath}/staff/flatform/custom/getall">用户管理</a></li>
-
         </ul>
 
         <ul class="nav navbar-nav navbar-right form-inline">

@@ -40,12 +40,12 @@ public class TypeController {
 
     @RequestMapping("/insert")
     public String insert(Type type) {
-        if (null == typeServiceImp.selectByid(type.getProtypeid())) {
-            typeServiceImp.insert(type);
-        } else {
-            typeServiceImp.update(type);
-        }
-        return "getall_type";
+//        if (null == typeServiceImp.selectByid(type.getProtypeid())) {
+//            typeServiceImp.insert(type);
+//        } else {
+//            typeServiceImp.update(type);
+//        }
+        return "addtype";
 
     }
 //    删除

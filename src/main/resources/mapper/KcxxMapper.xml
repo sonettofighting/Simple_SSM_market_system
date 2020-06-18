@@ -155,6 +155,6 @@
     </select>
 
     <select id="getsoldout" resultMap="BaseResultMap">
-        select * from kcxx where num &lt;= 1
+        select * from kcxx where num &lt; 1
     </select>
 </mapper>

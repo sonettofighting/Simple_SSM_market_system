@@ -60,7 +60,7 @@ public class PurchaseController {
         if (purchaseServiceImp.update(purchase)) {
             purchase = purchaseServiceImp.getbyid(purchase.getInid());
             model.addAttribute("purchase", purchase);
-            return "getall_type";
+            return "getall_purchase";
         }
         return null;
 
@@ -69,7 +69,7 @@ public class PurchaseController {
     @RequestMapping("/delete")
     public String delete(String inid) {
         purchaseServiceImp.delete(inid);
-        return "getall_type";
+        return "getall_purchase";
     }
 
     //  跳转到增加页面
@@ -87,7 +87,7 @@ public class PurchaseController {
         } else {
             purchaseServiceImp.update(purchase);
         }
-        return "getall_type";
+        return "getall_purchase";
 
     }
 

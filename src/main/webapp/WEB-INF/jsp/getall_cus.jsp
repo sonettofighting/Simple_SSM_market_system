@@ -11,6 +11,11 @@
             </div>
             <!-- 按钮 -->
             <div class="row">
+                <a href="${pageContext.request.contextPath}/staff/flatform/main" class="btn btn-info"
+                   role="button">返回主页</a>
+
+                <a href="${pageContext.request.contextPath }/staff/flatform/custom/toadd"
+                   class="btn btn-primary " role="button">新增</a>
                 <form class="form-inline" action="getbyparams" method="post">
 			                      <span class="row">
 			                       <div class="form-group">
@@ -23,8 +28,6 @@
 								  </div>
 								  <button class="btn btn-primary" type="submit">查询</button>
 
-								  <a href="${pageContext.request.contextPath }/staff/flatform/custom/toadd"
-                                     class="btn btn-primary " role="button">新增</a>
 								  </span>
 
                 </form>
@@ -67,7 +70,7 @@
                         页,总 ${pageInfo.total } 条记录
                     </div>
                     <!-- 分页条信息 -->
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <nav aria-label="Page navigation">
                             <ul class="pagination">
                                 <li>
@@ -133,7 +136,7 @@ alert(1);
 <script type="text/javascript">
     function del(id) {
         var message = confirm("是否确认要删除?");
-        if (message == true) {
+        if (message === true) {
             // 确认时做的操作 var
             window.location.href = "${pageContext.request.contextPath }/staff/flatform/custom/delete?cusid=" + id;
             alert("删除成功");
