@@ -16,6 +16,8 @@ public class TypeServiceImp implements ITypeService {
     public int delete(String protypeid) {
         // TODO Auto-generated method stub
         return typeMapper.deleteByPrimaryKey(protypeid);
+
+
     }
 
     public int insert(Type record) {

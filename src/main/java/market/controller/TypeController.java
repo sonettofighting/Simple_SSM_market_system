@@ -45,7 +45,7 @@ public class TypeController {
         } else {
             typeServiceImp.update(type);
         }
-        return "redirect:getall";
+        return "getall_type";
 
     }
 //    删除
@@ -53,7 +53,7 @@ public class TypeController {
     @RequestMapping("/delete")
     public String delete(String protypeid) {
         typeServiceImp.delete(protypeid);
-        return "redirect:getall";
+        return "getall_type";
     }
 //    修改类别
 
@@ -62,7 +62,7 @@ public class TypeController {
         if (typeServiceImp.update(type)) {
             type = typeServiceImp.selectByid(type.getProtypeid());
             model.addAttribute("type", type);
-            return "redirect:getall";
+            return "getall_type";
         }
         return null;
     }
@@ -73,11 +73,11 @@ public class TypeController {
     public String getall(ModelMap model,
                          @RequestParam(defaultValue = "1", value = "pn") Integer pn
     ) {
-        PageHelper.startPage(pn, 4);
+        PageHelper.startPage(pn, 5);
         List<Type> types = typeServiceImp.getall();
         PageInfo<Type> pageInfo = new PageInfo<Type>(types);
         model.addAttribute("pageInfo", pageInfo);
-        return "getall";
+        return "getall_type";
 
     }
 //  查询单个
@@ -86,7 +86,7 @@ public class TypeController {
     public String getbyid(String protypeid, HttpServletRequest request, Model model) {
         request.setAttribute("type", typeServiceImp.selectByid(protypeid));
         model.addAttribute("type", typeServiceImp.selectByid(protypeid));
-        return "getall";
+        return "getall_type";
 
     }
 

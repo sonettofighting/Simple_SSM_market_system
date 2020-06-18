@@ -25,63 +25,69 @@ import java.util.List;
 @Controller
 @RequestMapping("/staff/flatform/purchase")
 public class PurchaseController {
-	@Resource
-	PurchaseServiceImp purchaseServiceImp;
-//	获取所有进货信息
-	@RequestMapping("getall")
-	public String getlist(ModelMap model,
-			@RequestParam(defaultValue="1", value="pn") Integer pn
-			) {
-		PageHelper.startPage(pn, 4);
-		List<Purchase> purchase = purchaseServiceImp.getall();
-		PageInfo<Purchase> pageInfo= new PageInfo<Purchase>(purchase);
-		model.addAttribute("pageInfo", pageInfo);
-		return "getall_purchase";
+    @Resource
+    PurchaseServiceImp purchaseServiceImp;
 
-	}
-//	根据id查询单个信息
+    //	获取所有进货信息
+    @RequestMapping("getall")
+    public String getlist(ModelMap model,
+                          @RequestParam(defaultValue = "1", value = "pn") Integer pn
+    ) {
+        PageHelper.startPage(pn, 5);
+        List<Purchase> purchase = purchaseServiceImp.getall();
+        PageInfo<Purchase> pageInfo = new PageInfo<Purchase>(purchase);
+        model.addAttribute("pageInfo", pageInfo);
+        return "getall_purchase";
+
+    }
+
+    //	根据id查询单个信息
     @RequestMapping("/getpurchase")
-    public String getbyid(String inid,HttpServletRequest request,Model model){
+    public String getbyid(String inid, HttpServletRequest request, Model model) {
         request.setAttribute("purchase", purchaseServiceImp.getbyid(inid));
-        model.addAttribute("purchase",purchaseServiceImp.getbyid(inid));
+        model.addAttribute("purchase", purchaseServiceImp.getbyid(inid));
         return "getpurchase";
     }
-	@RequestMapping("edit")
-	public String edit(Purchase purchase, Model model){
-		model.addAttribute("purchase", purchaseServiceImp.getbyid(purchase.getInid()));
-		return "editpurchase";
-	}
-	@RequestMapping("update")
-	public String update(Purchase purchase, Model model){
-    	if(purchaseServiceImp.update(purchase)) {
-    		purchase =purchaseServiceImp.getbyid(purchase.getInid());
-    		model.addAttribute("purchase", purchase);
-    		return "redirect:getall";
-    	}
-    	return null;
+
+    @RequestMapping("edit")
+    public String edit(Purchase purchase, Model model) {
+        model.addAttribute("purchase", purchaseServiceImp.getbyid(purchase.getInid()));
+        return "editpurchase";
+    }
+
+    @RequestMapping("update")
+    public String update(Purchase purchase, Model model) {
+        if (purchaseServiceImp.update(purchase)) {
+            purchase = purchaseServiceImp.getbyid(purchase.getInid());
+            model.addAttribute("purchase", purchase);
+            return "getall_type";
+        }
+        return null;
 
     }
+
     @RequestMapping("/delete")
-    public String delete(String inid){
-    	purchaseServiceImp.delete(inid);
-        return "redirect:getall";
+    public String delete(String inid) {
+        purchaseServiceImp.delete(inid);
+        return "getall_type";
     }
-//  跳转到增加页面
-    @RequestMapping("/toadd")
-  public String toadd(){
-  	return "addpurchase";
 
-  }
+    //  跳转到增加页面
+    @RequestMapping("/toadd")
+    public String toadd() {
+        return "addpurchase";
+
+    }
 
     @RequestMapping("/insert")
 //    先判断数据库有没有，有就更新，没有就新增
-    public String insert(Purchase purchase){
-    	if(null==purchaseServiceImp.getbyid(purchase.getInid())) {
-        	purchaseServiceImp.insert(purchase);
-    	}else {
-    		purchaseServiceImp.update(purchase);
-    	}
-    	return "redirect:getall";
+    public String insert(Purchase purchase) {
+        if (null == purchaseServiceImp.getbyid(purchase.getInid())) {
+            purchaseServiceImp.insert(purchase);
+        } else {
+            purchaseServiceImp.update(purchase);
+        }
+        return "getall_type";
 
     }
 
@@ -92,19 +98,19 @@ public class PurchaseController {
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
     }
 
-//	按条件获取所有进货信息
-	@RequestMapping("getbyparams")
-	public String getbyparams(Model model, @RequestParam(value = "proid", required = false) String proid,
-							  @RequestParam(value = "inid", required = false) String inid, @RequestParam(value = "pname", required = false) String pname,
-							  @RequestParam(value = "indate", required = false) String indate, @RequestParam(defaultValue = "1", value = "pn") Integer pn
-	) {
-		PageHelper.startPage(pn, 100);
-		List<Purchase> purchase = purchaseServiceImp.getbyparams(proid, inid, pname, indate);
-		PageInfo<Purchase> pageInfo= new PageInfo<Purchase>(purchase);
-		model.addAttribute("pageInfo", pageInfo);
-		return "getpurchasebyparams";
-		
-	}
+    //	按条件获取所有进货信息
+    @RequestMapping("getbyparams")
+    public String getbyparams(Model model, @RequestParam(value = "proid", required = false) String proid,
+                              @RequestParam(value = "inid", required = false) String inid, @RequestParam(value = "pname", required = false) String pname,
+                              @RequestParam(value = "indate", required = false) String indate, @RequestParam(defaultValue = "1", value = "pn") Integer pn
+    ) {
+        PageHelper.startPage(pn, 100);
+        List<Purchase> purchase = purchaseServiceImp.getbyparams(proid, inid, pname, indate);
+        PageInfo<Purchase> pageInfo = new PageInfo<Purchase>(purchase);
+        model.addAttribute("pageInfo", pageInfo);
+        return "getpurchasebyparams";
+
+    }
 
 }
 

@@ -16,12 +16,17 @@ public interface KcxxMapper {
     Kcxx selectByPrimaryKey(String proid);
 
     Boolean updateByPrimaryKey(Kcxx record);
-//    库存表关联商品信息表
+
+    //    库存表关联商品信息表
     Kcxx kcxxWithPro(String proid);
-//  库存表关联商品信息表（库存预警表）
+
+    //  库存表关联商品信息表（库存预警表）
     List<Kcxx> kcxxWithPronum();
+
     List<Kcxx> kcxxWithProdata();
-    List<Kcxx> getbyparams(@Param("proid") String proid,@Param("pname")String pname);
+
+    List<Kcxx> getbyparams(@Param("proid") String proid, @Param("pname") String pname);
+
     List<Kcxx> getsoldout();
 
 }

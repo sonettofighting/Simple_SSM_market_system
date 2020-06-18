@@ -17,6 +17,7 @@ public interface ProductMapper {
     Product selectByPrimaryKey(String proid);
 
     boolean updateByPrimaryKey(Product record);
-//    多条件查询
-    List<Product> getbyparams(@Param("proid") String proid,@Param("supname")String supname,@Param("pname")String pname,@Param("protype")String protype );
+
+    //    多条件查询
+    List<Product> getbyparams(@Param("proid") String proid, @Param("supname") String supname, @Param("pname") String pname, @Param("protype") String protype);
 }

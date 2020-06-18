@@ -24,92 +24,99 @@ import java.util.List;
 @Controller
 @RequestMapping("/staff/flatform/product")
 public class ProductController {
-	@Resource
-	ProductServiceImp productServiceImp;
-//	获取所有商品信息
-	@RequestMapping("getlist")
-	public String getlist(ModelMap model,
-			@RequestParam(defaultValue="1", value="pn") Integer pn
-			) {
-		PageHelper.startPage(pn, 4);
-		List<Product> products= productServiceImp.getlist();
-		PageInfo<Product> pageInfo= new PageInfo<Product>(products);
-		model.addAttribute("pageInfo", pageInfo);
-		return "getlist";
-		
-	}
-//	根据id查询单个商品信息
-    @RequestMapping("/getpro")  
-    public String getpro(String proid,HttpServletRequest request,Model model){  
-        request.setAttribute("product", productServiceImp.selectByPrimaryKey(proid));
-        model.addAttribute("product",productServiceImp.selectByPrimaryKey(proid));  
-        return "getpro";  
-    }
-//    根据条件查询
-    @RequestMapping("/getprobyparams")  
-    public String getbyparams(Model model, @RequestParam(value = "proid", required = false) String proid,
-							  @RequestParam(value = "supname", required = false) String supname, @RequestParam(value = "pname", required = false) String pname,
-							  @RequestParam(value = "protype", required = false) String protype, @RequestParam(defaultValue = "1", value = "pn") Integer pn
-	){
-    	PageHelper.startPage(pn, 100);
-    	List<Product> products= productServiceImp.getbyparams(proid, supname, pname, protype);
-    	PageInfo<Product> pageInfo= new PageInfo<Product>(products);
-		model.addAttribute("pageInfo", pageInfo);
-		return "getprobyparams";
-    	
-    	
-        
-    }
-	@RequestMapping("editpro")
-	public String editProduct(Product pro, Model model){
-		model.addAttribute("product", productServiceImp.selectByPrimaryKey(pro.getProid()));
-		return "editpro";
-	}	
-	@RequestMapping("updatepro")
-	public String updatepro(Product product, Model model){
-    	if(productServiceImp.updateByPrimaryKey(product)) {
-    		product=productServiceImp.selectByPrimaryKey(product.getProid());
-    		model.addAttribute("product", product);
-    		return "redirect:getlist"; 
-    	}
-    	return null;
-         
-    } 
-    @RequestMapping("/deletepro")  
-    public String deletetepro(String proid){
-    	productServiceImp.deleteByPrimaryKey(proid);
-        return "redirect:getlist";  
-    } 
-//  跳转到增加页面
-    @RequestMapping("/toaddpro")  
-  public String toaddpro(){  
-  	return "addpro";
+    @Resource
+    ProductServiceImp productServiceImp;
 
-  } 
-    
-    @RequestMapping("/insertpro")  
+    //	获取所有商品信息
+    @RequestMapping("getlist")
+    public String getlist(ModelMap model,
+                          @RequestParam(defaultValue = "1", value = "pn") Integer pn
+    ) {
+        PageHelper.startPage(pn, 5);
+        List<Product> products = productServiceImp.getlist();
+        PageInfo<Product> pageInfo = new PageInfo<Product>(products);
+        model.addAttribute("pageInfo", pageInfo);
+        return "getall_pro";
+
+    }
+
+    //	根据id查询单个商品信息
+    @RequestMapping("/getpro")
+    public String getpro(String proid, HttpServletRequest request, Model model) {
+        request.setAttribute("product", productServiceImp.selectByPrimaryKey(proid));
+        model.addAttribute("product", productServiceImp.selectByPrimaryKey(proid));
+        return "getpro";
+    }
+
+    //    根据条件查询
+    @RequestMapping("/getprobyparams")
+    public String getbyparams(Model model, @RequestParam(value = "proid", required = false) String proid,
+                              @RequestParam(value = "supname", required = false) String supname, @RequestParam(value = "pname", required = false) String pname,
+                              @RequestParam(value = "protype", required = false) String protype, @RequestParam(defaultValue = "1", value = "pn") Integer pn
+    ) {
+        PageHelper.startPage(pn, 100);
+        List<Product> products = productServiceImp.getbyparams(proid, supname, pname, protype);
+        PageInfo<Product> pageInfo = new PageInfo<Product>(products);
+        model.addAttribute("pageInfo", pageInfo);
+        return "getprobyparams";
+
+
+    }
+
+    @RequestMapping("editpro")
+    public String editProduct(Product pro, Model model) {
+        model.addAttribute("product", productServiceImp.selectByPrimaryKey(pro.getProid()));
+        return "editpro";
+    }
+
+    @RequestMapping("updatepro")
+    public String updatepro(Product product, Model model) {
+        if (productServiceImp.updateByPrimaryKey(product)) {
+            product = productServiceImp.selectByPrimaryKey(product.getProid());
+            model.addAttribute("product", product);
+            return "getall_pro";
+        }
+        return null;
+
+    }
+
+    @RequestMapping("/deletepro")
+    public String deletetepro(String proid) {
+        productServiceImp.deleteByPrimaryKey(proid);
+        return "getall_pro";
+    }
+
+    //  跳转到增加页面
+    @RequestMapping("/toaddpro")
+    public String toaddpro() {
+        return "addpro";
+
+    }
+
+    @RequestMapping("/insertpro")
 //    先判断数据库有没有，有就更新，没有就新增
-    public String insertpro(Product product, HttpServletRequest request){
-    	if(null==productServiceImp.selectByPrimaryKey(product.getProid())) {
-        	productServiceImp.insert(product);   
-        	return "redirect:getlist";
-    	}else {
-    		request.setAttribute("msg", "新增失败，系统中存在该id的商品，请重新输入！");
-    		return "addpro";
-    	}
-    } 
+    public String insertpro(Product product, HttpServletRequest request) {
+        if (null == productServiceImp.selectByPrimaryKey(product.getProid())) {
+            productServiceImp.insert(product);
+            return "getall_pro";
+        } else {
+            request.setAttribute("msg", "新增失败，系统中存在该id的商品，请重新输入！");
+            return "addpro";
+        }
+    }
+
     @InitBinder
     protected void init(ServletRequestDataBinder binder) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         dateFormat.setLenient(false);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
     }
-    
-    @RequestMapping("/getproduct")  
+
+    @RequestMapping("/getproduct")
     @ResponseBody
-    public Product getproduct(String proid){
+    public Product getproduct(String proid) {
 
         return productServiceImp.selectByPrimaryKey(proid);
     }
-    
+
 }

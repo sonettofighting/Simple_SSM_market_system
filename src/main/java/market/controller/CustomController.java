@@ -48,7 +48,7 @@ public class CustomController {
         } else {
             customServiceImp.update(custom);
         }
-        return "redirect:getall";
+        return "getall_type";
 
     }
 //    删除
@@ -56,7 +56,7 @@ public class CustomController {
     @RequestMapping("/delete")
     public String delete(String cusid) {
         customServiceImp.delete(cusid);
-        return "redirect:getall";
+        return "getall_type";
     }
 //    修改
 
@@ -65,7 +65,7 @@ public class CustomController {
         if (customServiceImp.update(custom)) {
             custom = customServiceImp.getByid(custom.getCusid());
             model.addAttribute("custom", custom);
-            return "redirect:getall";
+            return "getall_type";
         }
         return null;
     }
@@ -76,7 +76,7 @@ public class CustomController {
     public String getall_cus(ModelMap model,
                              @RequestParam(defaultValue = "1", value = "pn") Integer pn
     ) {
-        PageHelper.startPage(pn, 4);
+        PageHelper.startPage(pn, 5);
         List<Custom> Customs = customServiceImp.getlist();
         PageInfo<Custom> pageInfo = new PageInfo<Custom>(Customs);
         model.addAttribute("pageInfo", pageInfo);
@@ -89,7 +89,7 @@ public class CustomController {
     public String getbyid(String cusid, HttpServletRequest request, Model model) {
         request.setAttribute("custom", customServiceImp.getByid(cusid));
         model.addAttribute("custom", customServiceImp.getByid(cusid));
-        return "getall";
+        return "getall_type";
 
     }
 

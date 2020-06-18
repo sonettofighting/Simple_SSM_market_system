@@ -52,7 +52,7 @@ public class KcxxController {
         } else {
             kcxxServiceImp.update(kcxx);
         }
-        return "redirect:getall";
+        return "getall_type";
 
     }
 //    删除
@@ -60,7 +60,7 @@ public class KcxxController {
     @RequestMapping("/delete")
     public String delete(String proid) {
         kcxxServiceImp.delete(proid);
-        return "redirect:getall";
+        return "getall_type";
     }
 //    修改
 
@@ -69,7 +69,7 @@ public class KcxxController {
         if (kcxxServiceImp.update(kcxx)) {
             kcxx = kcxxServiceImp.getbyid(kcxx.getProid());
             model.addAttribute("kcxx", kcxx);
-            return "redirect:getall";
+            return "getall_type";
         }
         return null;
     }
@@ -80,7 +80,7 @@ public class KcxxController {
     public String getall_kcxx(ModelMap model,
                               @RequestParam(defaultValue = "1", value = "pn") Integer pn
     ) {
-        PageHelper.startPage(pn, 4);
+        PageHelper.startPage(pn, 5);
         List<Kcxx> kcxxs = kcxxServiceImp.getall();
         PageInfo<Kcxx> pageInfo = new PageInfo<Kcxx>(kcxxs);
         model.addAttribute("pageInfo", pageInfo);
@@ -90,8 +90,7 @@ public class KcxxController {
 
     @RequestMapping("getsoldout")
     public String getsoldout(Model model,
-                             @RequestParam(defaultValue = "1", value = "pn") Integer pn)
-    {
+                             @RequestParam(defaultValue = "1", value = "pn") Integer pn) {
         PageHelper.startPage(pn, 100);
         List<Kcxx> ckin = kcxxServiceImp.getsoldout();
         PageInfo<Kcxx> pageInfo = new PageInfo<Kcxx>(ckin);
@@ -105,7 +104,7 @@ public class KcxxController {
     public String getbyid(String proid, HttpServletRequest request, Model model) {
         request.setAttribute("kcxx", kcxxServiceImp.getbyid(proid));
         model.addAttribute("kcxx", kcxxServiceImp.getbyid(proid));
-        return "getall";
+        return "getall_type";
 
     }
 

@@ -4,7 +4,7 @@
 <div class="right_col" role="main">
     <form class="form-horizontal form-label-left" method="post" action="update" onsubmit="return checkall()">
         <h1 class=" text-center">
-            <span class="section">进货</span>
+            <span class="section">进货信息修改</span>
         </h1>
 
         <div class="item form-group">
@@ -39,8 +39,8 @@
             </div>
         </div>
         <div class="btn-group col-md-offset-5">
-        <a onclick="javascript:history.back(-1);" class=" text-left btn btn-default" role="button">《返回上页</a>
-        <button type="submit" class="btn btn-primary text-center  col-md-offset-4 col-lg-offset-4col-xl-offset-4">提交
+            <a onclick="history.back(-1);" class=" text-left btn btn-default" role="button">《返回上页</a>
+            <button type="submit" class="btn btn-primary text-center  col-md-offset-4 col-lg-offset-4col-xl-offset-4">提交
         </div>
         </button>
     </form>

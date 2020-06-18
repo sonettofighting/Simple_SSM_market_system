@@ -16,5 +16,6 @@ public interface CustomMapper {
     Custom selectByPrimaryKey(String cusid);
 
     boolean updateByPrimaryKey(Custom record);
-    List<Custom> getbyparams(@Param("cusid") String cusid,@Param("cusname") String cusname);
+
+    List<Custom> getbyparams(@Param("cusid") String cusid, @Param("cusname") String cusname);
 }

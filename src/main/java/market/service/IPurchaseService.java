@@ -16,7 +16,7 @@ public interface IPurchaseService {
     Purchase getbyid(String inid);
 
     boolean update(Purchase record);
-    
-    List<Purchase> getbyparams(String proid, String inid, String pname, String indate );
+
+    List<Purchase> getbyparams(String proid, String inid, String pname, String indate);
 
 }

@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface PurchaseMapper {
-	
+
     int deleteByPrimaryKey(String inid);
 
     int insert(Purchase record);
@@ -18,6 +18,6 @@ public interface PurchaseMapper {
     Purchase selectByPrimaryKey(String inid);
 
     boolean updateByPrimaryKey(Purchase record);
-    
-    List<Purchase> getbyparams(@Param("proid") String proid, @Param("inid")String inid, @Param("pname")String pname, @Param("indate")String indate );
+
+    List<Purchase> getbyparams(@Param("proid") String proid, @Param("inid") String inid, @Param("pname") String pname, @Param("indate") String indate);
 }
