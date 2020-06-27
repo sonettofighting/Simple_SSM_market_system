@@ -4,9 +4,7 @@
 
 IDEA的my-batis-generator和easycode真香! 前端是不可能会前端的，这辈子都不会去做前端的。
 
-不论有没有人看，希望能够收到pull requests ~ 无论是今后的什么时候！
-
-pull request is always welcome !:smile:
+pull requests is always welcome !:smile:
 
 
 
