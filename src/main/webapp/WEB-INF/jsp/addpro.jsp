@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@include file="common/head.jsp" %>
+<%@include file="head.jsp" %>
 <div class="right_col" role="main">
     <form class="form-horizontal form-label-left" method="post" action="insertpro" onsubmit="return checkall()">
         <h1 class="text-center">
@@ -72,7 +72,7 @@
 
     <div class="clearfix"></div>
 </div>
-<%@include file="common/footer.jsp" %>
+<%@include file="footer.jsp" %>
 <script>
     /*判断输入id是不是数字  */
     function checkid() {
@@ -82,13 +82,13 @@
                 document.getElementById("demo4").innerHTML = " ";
                 return true;
             } else {
-                document.getElementById("demo4").innerHTML = "请输入正确的id！";
+                document.getElementById("demo4").innerHTML = "编号不能为空";
                 document.getElementById('proid').value = "";
                 document.getElementById('proid').focus();
                 return false;
             }
         } else {
-            document.getElementById("demo4").innerHTML = "请输入正确的id！";
+            document.getElementById("demo4").innerHTML = "请输入编号";
             document.getElementById('proid').focus();
             return false;
         }
@@ -101,14 +101,12 @@
             document.getElementById("demo1").innerHTML = " ";
             return true;
         } else {
-            document.getElementById("demo1").innerHTML = "请输入商品名称！";
+            document.getElementById("demo1").innerHTML = "请输入名称";
             document.getElementById('pname').focus();
             return false;
         }
     }
 
-
-    /*判断输入的价格是不是数字  */
     function ischeckNum() {
         var num = document.getElementById('price').value;
         if (num) {
@@ -116,13 +114,13 @@
                 document.getElementById("demo2").innerHTML = " ";
                 return true;
             } else {
-                document.getElementById("demo2").innerHTML = "你输入的数据不是数字！";
+                document.getElementById("demo2").innerHTML = "你输入的数据不是数字，请输入正确的值";
                 document.getElementById('price').value = "";
                 document.getElementById('price').focus();
                 return false;
             }
         } else {
-            document.getElementById("demo2").innerHTML = "请输入商品售价！";
+            document.getElementById("demo2").innerHTML = "请输入商品单价";
             document.getElementById('price').focus();
             return false;
         }
@@ -135,13 +133,13 @@
                 document.getElementById("demo3").innerHTML = " ";
                 return true;
             } else {
-                document.getElementById("demo3").innerHTML = "你输入的数据不是数字！";
+                document.getElementById("demo3").innerHTML = "你输入的数据不是数字";
                 document.getElementById('inprice').value = "";
                 document.getElementById('inprice').focus();
                 return false;
             }
         } else {
-            document.getElementById("demo3").innerHTML = "请输入商品售价！";
+            document.getElementById("demo3").innerHTML = "请输入商品售价";
             document.getElementById('inprice').focus();
             return false;
         }

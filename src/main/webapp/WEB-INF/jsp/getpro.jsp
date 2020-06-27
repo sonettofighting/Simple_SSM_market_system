@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@include file="common/head.jsp" %>
+<%@include file="head.jsp" %>
 <div class="right_col" role="main">
     <form class="form-horizontal form-label-left" novalidate>
         <h1 class="text-center">
@@ -78,12 +78,12 @@
             </div>
         </div>
 
-        <a href="${pageContext.request.contextPath }/staff/flatform/product/getlist"
+        <a href="${pageContext.request.contextPath }/product/getlist"
            class=" text-left btn btn-default  " role="button">返回上页</a>
-        <a href="${pageContext.request.contextPath }/staff/flatform/product/editpro?proid=${product.proid}"
+        <a href="${pageContext.request.contextPath }/product/editpro?proid=${product.proid}"
            class=" text-center btn btn-primary  col-md-offset-4 col-lg-offset-4col-xl-offset-4" role="button">修改</a>
 
     </form>
     <div class="clearfix"></div>
 </div>
-<%@include file="common/footer.jsp" %>
+<%@include file="footer.jsp" %>

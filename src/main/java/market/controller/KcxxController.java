@@ -24,27 +24,38 @@ import java.util.List;
  * 库存信息
  */
 @Controller
-@RequestMapping("/staff/flatform/kcxx")
+@RequestMapping("/kcxx")
 public class KcxxController {
     @Resource
     KcxxServiceImp kcxxServiceImp;
 
-//  跳转到增加页面
-
+    /**
+     * 添加库存信息
+     * @return 添加信息的页面
+     */
     @RequestMapping("/toadd")
     public String toadd() {
         return "addkcxx";
 
     }
-//  跳转到修改页面
 
+    /**
+     * 更新库存信息
+     * @param kcxx 库存的实体
+     * @param model 存放页面交互的信息
+     * @return 编辑库存信息的页面
+     */
     @RequestMapping("/toupdate")
     public String editProduct(Kcxx kcxx, Model model) {
         model.addAttribute("kcxx", kcxxServiceImp.getbyid(kcxx.getProid()));
         return "editkcxx";
     }
-//  先判断数据库有没有，有就更新，没有就新增
 
+    /**
+     * 判断库存信息是否存在，如果没有就插入，如果有就修改
+     * @param kcxx 库存信息实体
+     * @return 库存信息列表页面
+     */
     @RequestMapping("/insert")
     public String insert(Kcxx kcxx) {
         if (null == kcxxServiceImp.getbyid(kcxx.getProid())) {
@@ -55,15 +66,19 @@ public class KcxxController {
         return "getall_kcxx";
 
     }
-//    删除
 
     @RequestMapping("/delete")
     public String delete(String proid) {
         kcxxServiceImp.delete(proid);
         return "getall_kcxx";
     }
-//    修改
 
+    /**
+     *  更新库存信息
+     * @param kcxx
+     * @param model
+     * @return
+     */
     @RequestMapping("/update")
     public String update(Kcxx kcxx, Model model) {
         if (kcxxServiceImp.update(kcxx)) {
@@ -74,7 +89,7 @@ public class KcxxController {
         return null;
     }
 
-//    查询所有
+
 
     @RequestMapping("/getall")
     public String getall_kcxx(ModelMap model,

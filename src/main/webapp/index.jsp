@@ -24,7 +24,7 @@
 
 </head>
 
-<body class="text-center" background="http://img.netbian.com/file/2020/0618/ed7645760e586202efee77f2f2da4206.jpg">
+<body class="text-center"  background="${pageContext.request.contextPath}/statics/images/bg-login.jpg">
 
 <div class="container">
   <div class="row myCenter">
@@ -56,10 +56,6 @@
   </div>
 </div>
 <hr>
-  <footer class="separator">
-     2017级软件工程闽台合作 朱静雯 @sonettofighting
-  </footer>
-
 
 
 </body>

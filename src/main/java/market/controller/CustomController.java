@@ -16,31 +16,20 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * 用户信息
+ * 用户管理页面与数据进行交互
  */
 @Controller
-@RequestMapping("/staff/flatform/custom")
+@RequestMapping("/custom")
 public class CustomController {
 
     @Resource
     CustomServiceImp customServiceImp;
 
-//  跳转到增加页面
-
-    @RequestMapping("/toadd")
-    public String toaddCustom() {
-        return "addcus";
-
-    }
-//  跳转到修改页面
-
-    @RequestMapping("/toupdate")
-    public String editProduct(Custom custom, Model model) {
-        model.addAttribute("custom", customServiceImp.getByid(custom.getCusid()));
-        return "editcus";
-    }
-//  先判断数据库有没有，有就更新，没有就新增
-
+    /**
+     *  添加用户之前进行判断，如果存在就修改，不存在就删除
+     * @param custom 用户实体
+     * @return 用户列表页面
+     */
     @RequestMapping("/insert")
     public String insert(Custom custom) {
         if (null == customServiceImp.getByid(custom.getCusid())) {
@@ -51,15 +40,46 @@ public class CustomController {
         return "getall_cus";
 
     }
-//    删除
 
+    /**
+     * 添加用户
+     * @return 添加用户的页面
+     */
+    @RequestMapping("/toadd")
+    public String toaddCustom() {
+        return "addcus";
+
+    }
+
+    /**
+     * 更新页面的信息
+     * @param custom 用户实体
+     * @param model 与jsp页面交互的内容
+     * @return
+     */
+    @RequestMapping("/toupdate")
+    public String editProduct(Custom custom, Model model) {
+        model.addAttribute("custom", customServiceImp.getByid(custom.getCusid()));
+        return "editcus";
+    }
+
+    /**
+     * 删除用户
+     * @param cusid 用户id，同时也是数据库的主键
+     * @return
+     */
     @RequestMapping("/delete")
     public String delete(String cusid) {
         customServiceImp.delete(cusid);
         return "getall_cus";
     }
-//    修改
 
+    /**
+     * 更新用户信息，之后跳转至用户列表
+     * @param custom 用户实体
+     * @param model 与jsp页面交互的内容
+     * @return 用户列表页面
+     */
     @RequestMapping("/update")
     public String update(Custom custom, Model model) {
             customServiceImp.update(custom);
@@ -68,8 +88,7 @@ public class CustomController {
             return "getall_cus";
     }
 
-//    查询所有
-
+    //查询所有的用户
     @RequestMapping("/getall")
     public String getall_cus(ModelMap model,
                              @RequestParam(defaultValue = "1", value = "pn") Integer pn
@@ -81,7 +100,7 @@ public class CustomController {
         return "getall_cus";
 
     }
-//  查询单个
+
 
     @RequestMapping("/getbyid")
     public String getbyid(String cusid, HttpServletRequest request, Model model) {

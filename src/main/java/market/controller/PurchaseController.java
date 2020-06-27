@@ -23,7 +23,7 @@ import java.util.List;
  * 进货信息与网页进行交互页面
  */
 @Controller
-@RequestMapping("/staff/flatform/purchase")
+@RequestMapping("/purchase")
 public class PurchaseController {
     @Resource
     PurchaseServiceImp purchaseServiceImp;

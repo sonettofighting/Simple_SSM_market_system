@@ -36,14 +36,14 @@ public class StaffController {
         Staff staff = staffServiceImp.getStaff(staffid, pwd);
         if (staff != null) {
             session.setAttribute(Constants.Staff_SESSION, staff);
-            return "redirect:/staff/flatform/main";
+            return "redirect:main";
         } else {
             request.setAttribute("error", "账号密码不匹配");
             return "stafflogin";
         }
     }
 
-    @RequestMapping(value = "/flatform/main")
+    @RequestMapping(value = "/main")
     public String main(HttpSession session) {
 //		验证是否有session信息，防止非法登录，没有就跳转到登录页面
         if (session.getAttribute(Constants.Staff_SESSION) == null) {

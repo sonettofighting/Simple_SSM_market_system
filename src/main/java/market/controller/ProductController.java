@@ -22,7 +22,7 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping("/staff/flatform/product")
+@RequestMapping("/product")
 public class ProductController {
     @Resource
     ProductServiceImp productServiceImp;

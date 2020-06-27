@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
-@RequestMapping("/staff/flatform/type")
+@RequestMapping("/type")
 public class TypeController {
 
     @Resource
@@ -36,20 +36,18 @@ public class TypeController {
         model.addAttribute("type", typeServiceImp.selectByid(type.getProtypeid()));
         return "edittype";
     }
-//  先判断数据库有没有，有就更新，没有就新增
 
     @RequestMapping("/insert")
     public String insert(Type type) {
-//        if (null == typeServiceImp.selectByid(type.getProtypeid())) {
-//            typeServiceImp.insert(type);
-//        } else {
-//            typeServiceImp.update(type);
-//        }
+        if (null == typeServiceImp.selectByid(type.getProtypeid())) {
+            typeServiceImp.insert(type);
+        } else {
+            typeServiceImp.update(type);
+        }
         return "addtype";
 
     }
 //    删除
-
     @RequestMapping("/delete")
     public String delete(String protypeid) {
         typeServiceImp.delete(protypeid);

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@include file="common/head.jsp" %>
+<%@include file="head.jsp" %>
 <div class="right_col" role="main">
     <div class="clearfix"></div>
     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -34,7 +34,7 @@
                                 <th><fmt:formatDate pattern="yyyy-MM-dd" value="${export.retdate}"/></th>
                                 <th>${export.marks}</th>
                                 <th>
-                                    <a href="${pageContext.request.contextPath }/staff/flatform/export/edit?inid=${export.inid}"
+                                    <a href="${pageContext.request.contextPath }/export/edit?inid=${export.inid}"
                                        class="btn btn-primary btn-xs">修改</a>
                                     <a onclick="del(${export.inid})" class="btn btn-danger btn-xs"
                                        aria-label="Left Align" role="button">删除</a>
@@ -50,19 +50,19 @@
                 <div class="col-md-6">总 ${pageInfo.total } 条记录</div>
 
             </div>
-            <a href="${pageContext.request.contextPath }/staff/flatform/export/getall"
+            <a href="${pageContext.request.contextPath }/export/getall"
                class=" text-left btn btn-default" role="button">返回上页</a>
 
         </div>
     </div>
 </div>
-<%@include file="common/footer.jsp" %>
+<%@include file="footer.jsp" %>
 <script type="text/javascript">
     function del(id) {
         var message = confirm("是否确认要删除?");
         if (message == true) {
             // 确认时做的操作 var
-            window.location.href = "${pageContext.request.contextPath }/staff/flatform/export/delete?inid=" + id;
+            window.location.href = "${pageContext.request.contextPath }/export/delete?inid=" + id;
             alert("删除成功");
         } else {
             // 取消时做的操作

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@include file="common/head.jsp" %>
+<%@include file="head.jsp" %>
 <div class="right_col" role="main">
     <div class="clearfix"></div>
     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -11,9 +11,9 @@
             </div>
             <!-- 按钮 -->
             <div class="row">
-                <a href="${pageContext.request.contextPath}/staff/flatform/main" class="btn btn-info"
+                <a href="${pageContext.request.contextPath}/staff/main" class="btn btn-info"
                    role="button">返回主页</a>
-                <a href="${pageContext.request.contextPath}/staff/flatform/product/toaddpro"
+                <a href="${pageContext.request.contextPath}/product/toaddpro"
                    class="btn btn-primary " role="button">新增</a>
                 <form class="form-inline" action="getprobyparams" method="post">
 			  <span class="row">
@@ -80,16 +80,15 @@
                                 <th>${product.marks}</th>
                                 <th>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-xs btn-primary dropdown-toggle"
-                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            编辑 <span class="caret"></span>
-                                        </button>
+                                                <a href="${pageContext.request.contextPath}/product/editpro?proid=${product.proid}"
+                                                   class="btn btn-xs btn-primary dropdown-toggle">编辑</a>
+
                                         <ul class="dropdown-menu">
                                             <li>
-                                                <a href="${pageContext.request.contextPath}/staff/flatform/product/getpro?proid=${product.proid}">查看</a>
+                                                <a href="${pageContext.request.contextPath}/product/getpro?proid=${product.proid}">查看</a>
                                             </li>
                                             <li>
-                                                <a href="${pageContext.request.contextPath}/staff/flatform/product/editpro?proid=${product.proid}">修改</a>
+                                                <a href="${pageContext.request.contextPath}/product/editpro?proid=${product.proid}">修改</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -111,11 +110,11 @@
                 <div class="col-md-6">
                     <nav aria-label="Page navigation">
                         <ul class="pagination">
-                            <li><a href="${pageContext.request.contextPath}/staff/flatform/product/getlist?pn=1">首页</a>
+                            <li><a href="${pageContext.request.contextPath}/product/getlist?pn=1">首页</a>
                             </li>
                             <c:if test="${pageInfo.hasPreviousPage }">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/staff/flatform/product/getlist?pn=${pageInfo.pageNum-1}"
+                                    <a href="${pageContext.request.contextPath}/product/getlist?pn=${pageInfo.pageNum-1}"
                                        aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
                                     </a></li>
                             </c:if>
@@ -127,19 +126,19 @@
                                 </c:if>
                                 <c:if test="${page_Num != pageInfo.pageNum }">
                                     <li>
-                                        <a href="${pageContext.request.contextPath}/staff/flatform/product/getlist?pn=${page_Num }">${page_Num }</a>
+                                        <a href="${pageContext.request.contextPath}/product/getlist?pn=${page_Num }">${page_Num }</a>
                                     </li>
                                 </c:if>
 
                             </c:forEach>
                             <c:if test="${pageInfo.hasNextPage }">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/staff/flatform/product/getlist?pn=${pageInfo.pageNum+1 }"
+                                    <a href="${pageContext.request.contextPath}/product/getlist?pn=${pageInfo.pageNum+1 }"
                                        aria-label="Next"> <span aria-hidden="true">&raquo;</span>
                                     </a></li>
                             </c:if>
                             <li>
-                                <a href="${pageContext.request.contextPath}/staff/flatform/product/getlist?pn=${pageInfo.pages}">末页</a>
+                                <a href="${pageContext.request.contextPath}/product/getlist?pn=${pageInfo.pages}">末页</a>
                             </li>
                         </ul>
                     </nav>
@@ -149,13 +148,13 @@
         </div>
     </div>
 </div>
-<%@include file="common/footer.jsp" %>
+<%@include file="footer.jsp" %>
 <script type="text/javascript">
     function del(id) {
         var message = confirm("是否确认要删除?");
         if (message == true) {
             // 确认时做的操作 var
-            window.location.href = "${pageContext.request.contextPath}/staff/flatform/product/deletepro?proid=" + id;
+            window.location.href = "${pageContext.request.contextPath}/product/deletepro?proid=" + id;
             alert("删除成功");
         } else {
             // 取消时做的操作

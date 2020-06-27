@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@include file="common/head.jsp" %>
+<%@include file="head.jsp" %>
 <div class="right_col" role="main">
     <form class="form-horizontal form-label-left" method="post" action="insert" onsubmit="return checkall()">
         <h1 class="text-center">
@@ -63,9 +63,9 @@
     </form>
     <div class="clearfix"></div>
 </div>
-<%@include file="common/footer.jsp" %>
+<%@include file="footer.jsp" %>
 <script>
-    /*判断输入id是不是数字  */
+
     function checkinid() {
         const num = document.getElementById('inid').value;
         if (num) {
@@ -73,13 +73,13 @@
                 document.getElementById("demo1").innerHTML = " ";
                 return true;
             } else {
-                document.getElementById("demo1").innerHTML = "请输入正确的订单id！";
+                document.getElementById("demo1").innerHTML = "请输入正确的商品编号";
                 document.getElementById('inid').value = "";
                 document.getElementById('inid').focus();
                 return false;
             }
         } else {
-            document.getElementById("demo1").innerHTML = "请输入订单id！";
+            document.getElementById("demo1").innerHTML = "请输入订单编号";
             document.getElementById('inid').focus();
             return false;
         }
@@ -92,7 +92,7 @@
             document.getElementById("demo2").innerHTML = " ";
             return true;
         } else {
-            document.getElementById("demo2").innerHTML = "请输入商品名称！";
+            document.getElementById("demo2").innerHTML = "请输入商品名称";
             document.getElementById('pname').focus();
             return false;
         }
@@ -107,13 +107,13 @@
                 document.getElementById("demo3").innerHTML = " ";
                 return true;
             } else {
-                document.getElementById("demo3").innerHTML = "请输入正确的商品id！";
+                document.getElementById("demo3").innerHTML = "请输入正确的商品编号";
                 document.getElementById('proid').value = "";
                 document.getElementById('proid').focus();
                 return false;
             }
         } else {
-            document.getElementById("demo3").innerHTML = "请输入商品id！";
+            document.getElementById("demo3").innerHTML = "请输入商品编号";
             document.getElementById('proid').focus();
             return false;
         }
@@ -126,13 +126,13 @@
                 document.getElementById("demo4").innerHTML = " ";
                 return true;
             } else {
-                document.getElementById("demo4").innerHTML = "请输入正确的商品数量！";
+                document.getElementById("demo4").innerHTML = "请输入正确的商品数量";
                 document.getElementById('num').value = "";
                 document.getElementById('num').focus();
                 return false;
             }
         } else {
-            document.getElementById("demo4").innerHTML = "请输入商品数量！";
+            document.getElementById("demo4").innerHTML = "请输入商品数量";
             document.getElementById('num').focus();
             return false;
         }

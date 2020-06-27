@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@include file="common/head.jsp" %>
+<%@include file="head.jsp" %>
 <div class="right_col" role="main">
     <form class="form-horizontal form-label-left" method="post" action="update" name="form"
           onsubmit="return checkall()">
@@ -29,7 +29,7 @@
     </form>
     <div class="clearfix"></div>
 </div>
-<%@include file="common/footer.jsp" %>
+<%@include file="footer.jsp" %>
 <script>
     /*  校验商品类型名称*/
     function check() {

@@ -26,7 +26,7 @@ import java.util.List;
  * 出货信息
  */
 @Controller
-@RequestMapping("/staff/flatform/export")
+@RequestMapping("/export")
 public class ExportController {
     @Resource
     ExportServiceImp exportServiceImp;
@@ -34,7 +34,7 @@ public class ExportController {
     @Resource
     PurchaseServiceImp purchaseServiceImp;
 
-    //	获取所有退货信息
+    //出货的信息列表
     @RequestMapping("getall")
     public String getlist(ModelMap model,
                           @RequestParam(defaultValue = "1", value = "pn") Integer pn
@@ -47,7 +47,7 @@ public class ExportController {
 
     }
 
-    //	根据id查询单个信息
+    //查询一条信息，根据一条信息可以进行CRUD操作
     @RequestMapping("/getexport")
     public String getbyid(String inid, HttpServletRequest request, Model model) {
         request.setAttribute("export", exportServiceImp.getbyid(inid));
@@ -55,7 +55,7 @@ public class ExportController {
         return "getexport";
     }
 
-    //    根据条件查询
+    //编辑
     @RequestMapping("edit")
     public String edit(Export export, Model model) {
         model.addAttribute("export", exportServiceImp.getbyid(export.getInid()));
@@ -79,15 +79,15 @@ public class ExportController {
         return "getall_export";
     }
 
-    //  跳转到增加页面
+    //添加
     @RequestMapping("/toadd")
     public String toadd() {
         return "addexport";
 
     }
 
+    //判断
     @RequestMapping("/insert")
-//    先判断数据库有没有，有就更新，没有就新增
     public String insert(Export export) {
         if (null == exportServiceImp.getbyid(export.getInid())) {
             exportServiceImp.insert(export);

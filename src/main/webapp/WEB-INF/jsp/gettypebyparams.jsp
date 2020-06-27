@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@include file="common/head.jsp" %>
+<%@include file="head.jsp" %>
 <div class="right_col" role="main">
     <div class="clearfix"></div>
     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -35,11 +35,11 @@
                                         </button>
                                         <ul class="dropdown-menu">
                                             <li>
-                                                <a href="${pageContext.request.contextPath }/staff/flatform/type/toupdate?protypeid=${type.protypeid}">修改</a>
+                                                <a href="${pageContext.request.contextPath }/type/toupdate?protypeid=${type.protypeid}">修改</a>
                                             </li>
                                         </ul>
                                     </div>
-                                    <a href="${pageContext.request.contextPath }/staff/flatform/type/delete?protypeid=${type.protypeid}"
+                                    <a href="${pageContext.request.contextPath }/type/delete?protypeid=${type.protypeid}"
                                        class="btn btn-danger btn-xs" aria-label="Left Align" role="button">删除</a>
                                 </th>
                             </tr>
@@ -54,9 +54,9 @@
 								页, --%>总 ${pageInfo.total } 条记录
                 </div>
             </div>
-            <a href="${pageContext.request.contextPath }/staff/flatform/type/getall"
+            <a href="${pageContext.request.contextPath }/type/getall"
                class=" text-left btn btn-default  " role="button">返回上页</a>
         </div>
     </div>
 </div>
-<%@include file="common/footer.jsp" %>
+<%@include file="footer.jsp" %>

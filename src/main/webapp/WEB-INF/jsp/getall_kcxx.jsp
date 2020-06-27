@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@include file="common/head.jsp" %>
+<%@include file="head.jsp" %>
 <div class="right_col" role="main">
     <div class="clearfix"></div>
     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -13,7 +13,7 @@
                     <hr>
                     <div>
                         <span>
-               <p>       <a href="${pageContext.request.contextPath}/staff/flatform/main" class="btn btn-info"
+               <p>       <a href="${pageContext.request.contextPath}/staff/main" class="btn btn-info"
                            role="button">返回主页</a>
                         <button class="btn btn-danger" type="submit">查看缺货</button>
 </p>
@@ -69,9 +69,9 @@
                                 <th>${kcxx.num}</th>
                                 <th>${kcxx.marks}</th>
                                 <th>
-                                    <a href="${pageContext.request.contextPath}/staff/flatform/kcxx/kcxxWithPro?proid=${kcxx.proid}"
+                                    <a href="${pageContext.request.contextPath}/kcxx/kcxxWithPro?proid=${kcxx.proid}"
                                        class="btn btn-default btn-xs">查看该商品信息</a>
-                                    <a href="${pageContext.request.contextPath}/staff/flatform/kcxx/toupdate?proid=${kcxx.proid}"
+                                    <a href="${pageContext.request.contextPath}/kcxx/toupdate?proid=${kcxx.proid}"
                                        class="btn btn-xs btn-success">进货</a>
                                 </th>
                             </tr>
@@ -90,11 +90,11 @@
                 <div class="col-md-6">
                     <nav aria-label="Page navigation">
                         <ul class="pagination">
-                            <li><a href="${pageContext.request.contextPath}/staff/flatform/kcxx/getall?pn=1">首页</a>
+                            <li><a href="${pageContext.request.contextPath}/kcxx/getall?pn=1">首页</a>
                             </li>
                             <c:if test="${pageInfo.hasPreviousPage}">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/staff/flatform/kcxx/getall?pn=${pageInfo.pageNum-1}"
+                                    <a href="${pageContext.request.contextPath}/kcxx/getall?pn=${pageInfo.pageNum-1}"
                                        aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
                                     </a></li>
                             </c:if>
@@ -106,19 +106,19 @@
                                 </c:if>
                                 <c:if test="${page_Num != pageInfo.pageNum}">
                                     <li>
-                                        <a href="${pageContext.request.contextPath}/staff/flatform/kcxx/getall?pn=${page_Num}">${page_Num}</a>
+                                        <a href="${pageContext.request.contextPath}/kcxx/getall?pn=${page_Num}">${page_Num}</a>
                                     </li>
                                 </c:if>
 
                             </c:forEach>
                             <c:if test="${pageInfo.hasNextPage }">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/staff/flatform/kcxx/getall?pn=${pageInfo.pageNum+1}"
+                                    <a href="${pageContext.request.contextPath}/kcxx/getall?pn=${pageInfo.pageNum+1}"
                                        aria-label="Next"> <span aria-hidden="true">&raquo;</span>
                                     </a></li>
                             </c:if>
                             <li>
-                                <a href="${pageContext.request.contextPath}/staff/flatform/kcxx/getall?pn=${pageInfo.pages}">末页</a>
+                                <a href="${pageContext.request.contextPath}/kcxx/getall?pn=${pageInfo.pages}">末页</a>
                             </li>
                         </ul>
                     </nav>
@@ -128,4 +128,4 @@
         </div>
     </div>
 </div>
-<%@include file="common/footer.jsp" %>
+<%@include file="footer.jsp" %>

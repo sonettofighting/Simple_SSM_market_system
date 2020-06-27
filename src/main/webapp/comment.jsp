@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@include file="WEB-INF/jsp/common/head.jsp" %>
+<%@include file="WEB-INF/jsp/head.jsp" %>
 
 <script type="text/javascript">
     let named;

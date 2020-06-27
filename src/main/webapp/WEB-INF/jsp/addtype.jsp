@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@include file="common/head.jsp" %>
+<%@include file="head.jsp" %>
 <div class="right_col" role="main">
     <form class="form-horizontal form-label-left" method="post" action="insert">
         <h1 class="text-center">
@@ -29,4 +29,4 @@
     </form>
     <div class="clearfix"></div>
 </div>
-<%@include file="common/footer.jsp" %>
+<%@include file="footer.jsp" %>

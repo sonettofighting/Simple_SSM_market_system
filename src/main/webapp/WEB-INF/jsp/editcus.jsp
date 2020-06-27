@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@include file="common/head.jsp" %>
+<%@include file="head.jsp" %>
 <div class="right_col" role="main">
     <form class="form-horizontal form-label-left" method="post" action="update" onsubmit="return checkall()">
         <h1 class="text-center">
@@ -60,7 +60,7 @@
     </form>
     <div class="clearfix"></div>
 </div>
-<%@include file="common/footer.jsp" %>
+<%@include file="footer.jsp" %>
 <script type="text/javascript">
     /*判断输入id是不是数字  */
     function checkid() {
@@ -70,13 +70,13 @@
                 document.getElementById("demo1").innerHTML = " ";
                 return true;
             } else {
-                document.getElementById("demo1").innerHTML = "请输入正确的id！";
+                document.getElementById("demo1").innerHTML = "请输入正确的编号";
                 document.getElementById('cusid').value = "";
                 document.getElementById('cusid').focus();
                 return false;
             }
         } else {
-            document.getElementById("demo1").innerHTML = "请输入正确的id！";
+            document.getElementById("demo1").innerHTML = "请输入正确的编号";
             document.getElementById('cusid').focus();
             return false;
         }

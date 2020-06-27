@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@include file="common/head.jsp" %>
+<%@include file="head.jsp" %>
 <div class="right_col" role="main">
     <div class="clearfix"></div>
     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -36,7 +36,7 @@
                                 <th>${custom.address}</th>
                                 <th>${custom.emali}</th>
                                 <th>
-                                    <a href="${pageContext.request.contextPath }/staff/flatform/custom/toupdate?cusid=${custom.cusid}"
+                                    <a href="${pageContext.request.contextPath }/custom/toupdate?cusid=${custom.cusid}"
                                        class="btn btn-primary btn-xs">修改</a>
                                     <a onclick="del(${custom.cusid})" class="btn btn-danger btn-xs"
                                        aria-label="Left Align" role="button">删除</a>
@@ -53,18 +53,18 @@
 								页, --%>总 ${pageInfo.total} 条记录
                 </div>
             </div>
-            <a href="${pageContext.request.contextPath }/staff/flatform/custom/getall"
+            <a href="${pageContext.request.contextPath }/custom/getall"
                class=" text-left btn btn-default  " role="button">返回上页</a>
         </div>
     </div>
 </div>
-<%@include file="common/footer.jsp" %>
+<%@include file="footer.jsp" %>
 <script type="text/javascript">
     function del(id) {
         var message = confirm("是否确认要删除?");
         if (message == true) {
             // 确认时做的操作 var
-            window.location.href = "${pageContext.request.contextPath }/staff/flatform/custom/delete?cusid=" + id;
+            window.location.href = "${pageContext.request.contextPath }/custom/delete?cusid=" + id;
             alert("删除成功");
         } else {
             // 取消时做的操作
